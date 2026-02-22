@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dynamic Pricing System</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <main class="container">
+    <h1>Dynamic Pricing System for Online Stores</h1>
+    <p class="subtitle">Machine Learning + Reinforcement Learning Real-Time Price Optimization</p>
+
+    <section class="panel">
+      <form id="pricingForm" class="grid">
+        <input id="productId" placeholder="Product ID" value="SKU-1001" required />
+        <input id="category" placeholder="Category" value="electronics" />
+        <input id="basePrice" type="number" step="0.01" placeholder="Base Price" value="120" required />
+        <input id="demandIndex" type="number" step="0.01" placeholder="Demand Index" value="62" required />
+        <input id="competitorPrice" type="number" step="0.01" placeholder="Competitor Price" value="128" required />
+        <input id="inventoryLevel" type="number" placeholder="Inventory Level" value="45" required />
+        <button type="submit">Predict Price</button>
+      </form>
+    </section>
+
+    <section class="cards">
+      <article><h3>Optimized Price</h3><p id="optimizedPrice">-</p></article>
+      <article><h3>Revenue Prediction</h3><p id="revenuePrediction">-</p></article>
+      <article><h3>Confidence Score</h3><p id="confidenceScore">-</p></article>
+      <article><h3>Expected Revenue Uplift %</h3><p id="upliftPct">-</p></article>
+      <article><h3>Conversion Improvement %</h3><p id="conversionPct">-</p></article>
+      <article><h3>Model</h3><p id="modelUsed">-</p></article>
+    </section>
+
+    <section class="panel kpis">
+      <h2>KPI Monitoring</h2>
+      <ul>
+        <li>Revenue Growth: <span id="kpiRevenue"></span></li>
+        <li>Profit Margin: <span id="kpiMargin"></span></li>
+        <li>Conversion Rate: <span id="kpiConversion"></span></li>
+        <li>Inventory Turnover: <span id="kpiTurnover"></span></li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <canvas id="pricingChart"></canvas>
+    </section>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>
